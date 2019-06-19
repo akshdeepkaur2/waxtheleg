@@ -38,7 +38,7 @@ class GameScene: SKScene {
             
             let touchedNodes = self.nodes(at: location)
             for node in touchedNodes.reversed() {
-                if node.name == "Hair1" {
+                if node.name == "hair1" {
                     self.currentNode = node
                     node.removeFromParent()
                     
@@ -46,8 +46,14 @@ class GameScene: SKScene {
                 }
             }
         }
-    }}
-
-
+    }
+    override  func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let touch = touches.first, let node = self.currentNode {
+            let touchLocation = touch.location(in: self)
+            node.position = touchLocation
+        }
+    }
+}
 
 
