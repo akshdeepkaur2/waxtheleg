@@ -54,6 +54,21 @@ class GameScene: SKScene {
             node.position = touchLocation
         }
     }
+    override   func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if SKNode().name=="Hair2"
+        {
+            self.currentNode = Hair2
+        }
+        
+        
+        
+    }
+    override  func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.currentNode = Hair2
+    }
 }
+
+    
+
 
 
